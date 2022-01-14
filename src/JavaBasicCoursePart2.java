@@ -1,127 +1,139 @@
 public class JavaBasicCoursePart2 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
 
-        // JAVA BASIC COURSE UDACITY.COM
+        // CZESC 2 - KURS PODSTAWOWY JAVA AUDAICTY
 
+        boolean isCold = false; // w tym przypadku if nie zostanie uruchomine ponieważ wartośc boolean is false
+        if (isCold) {
+            System.out.println("Please wear the coat");
+        }
 
-        String driver; // declaration statement
-        driver = "Hamish";
-        System.out.println(driver);
-        driver.length(); // komenda, kltóra liczy ilośc znaków przechowywanych w zmiennej driver
-        int letters = driver.length();
-        System.out.println(letters);
-        driver.toUpperCase(); // komenda, która zmienia znaki przechowywane w zmiennej driver na WIELKI LITERY
-        driver = driver.toUpperCase(); //
-        System.out.println(driver);
+        /* VARIABLE SCOPE - Scope is the block or range of code where a certain variable can be used and referred to.
+        Pamietaj - zawsze musisz zadeklarowac zmienna zanim uzyjesz ja w kodzie if, poniewaz if testuje zakres zmiennej
+        w tym przypadku jest to zakres True/False. Jesli dodamy w bloku "if" jakas dodatkowa zmienna to nie mozemy
+        uzywać jej poza blokiem bo nalezy ona tylko do tego konkretnego bloku, oddzielonego przez klamry*/
 
-        // STRING CONCATENATION is use for joining strings together or join variables with strings
+        //LEKCJA 9 ELSE STATEMENT
 
-        String driverFirstName;
-        driverFirstName = "Hamish";
-        String driverLastName = "Blake";
-        String driverFullName = driverFirstName + " " + driverLastName;
-        System.out.println(driverFullName);
+        /* Else statement can be placed only after "if" statement. It tells what program should do as an alternative.
+        using this together is called else-if statement" */
 
-        // STRING CONCETENATION used to join strings with numbers (variables)
+        boolean isLightGreen = false; //true or false
+        boolean isLightYellow = true;
+        if (isLightGreen) {
+            //traffic light is green
+            System.out.println("Drive!");
+        } else if (isLightYellow) {
+            //Light is not green but yellow
+            System.out.println("Slow down.");
+        } else {      //zauważ, że else ma swoj osobny block który pisany jest po zamknięciu bloku ifa
+            //light is NOT green
+            System.out.println("Stop. ");
+        } // W zależności od tego jaki wariant boolean przyjmie, tylko jeden blok codu moze byc wykonany
 
-        int stops;
-        int fare;
-        stops = 0;
-        fare = 0;
-        stops = stops + 1;
-        fare = fare + 5;
-        stops = stops + 1;
-        fare = fare + 3;
-        stops = stops + 1;
-        fare = fare + 7;
-        System.out.println(stops);
-        System.out.println(fare);
-        System.out.println("The bus made $" + fare + " after " + stops + " stops");
+        // LEKCJA 12
+        /*
+        <=  less-than/equal
+        >=  more-than/equal
+        ==  equal
+        !=  not equal
+          */
 
-        // LEKCJA 14
+        // LEKCJA 16 - BILETY DO MUZEUM
 
-        String language = "java";
-        String feeling = "Love";
-        feeling = feeling.toLowerCase();
-        language = language.toUpperCase();
-        System.out.println(" I " + feeling + " " + language);
+        //znizka na bilet obowiazuje dla osob majacych 15 lub mniej, majacych wiecej niz 60 lub dla studentow.
 
-        // LEKCJA 15
-        /* Camel Case for example driverFirstName
+        int ticketPrice = 10;
+        int age = 26;
+        boolean isStudent = false;
 
-        Są dwa przykłady Camel Case  1. lowerCamelVase and 2. UpperCamelCase
-        They are both commonly use in Java but in different places
+        if (age <= 15) {
+            // age is less or equal to 15
+            ticketPrice = 5;
+            System.out.println("Ticket price is: " + ticketPrice);
+        } else if (age > 60) {
+            ticketPrice = 5;
+            // age is greater than 60
+            System.out.println("Ticket price is: " + ticketPrice);
+        } else if (isStudent) {
+            ticketPrice = 5;
+            // The person is student
+            System.out.println("Ticket price is: " + ticketPrice);
+        } else {
+            ticketPrice = 10;
+            // The persone is not student and is older that 15 and younger than 60
+            System.out.println("Ticket price is: " + ticketPrice);
+        }
+        // Lekcja 17
+        /* można to zapisać prościej za pomocą operatorów logicznyh
 
-        Remember! you should always follow the lower camel case when you're creating a new variable name
+       LOGICAL OPERATORS
+       (1) AND &&
+       (2) OR ||
+       (3) NOT !
 
-        VARIABLE NAME RULES
-
-        (1) variable names are case snesitive
-        (2) start variable names with a letter
-        (3) cannot have white spaces !!
-        (4) Declare and initalize variables in one line (good practice) np. String player = "Jack"
+       Order of Operations:
+       !   wil operated firs
+       &&  will operated second
+       ||  will operated third
          */
 
-        // LEKCJA 16
+        // LEKCJA 21
+        // NESTED IF STATEMENTS - IF zagnieżdżony w IF
 
-        /* (1) int maxInt       = 1234567890;  int może miec maksymalnie 10 znaków
-           (2) long maxLong     = 1234567890*10000000;
-           (3) double fraction  = 99.275;
-           (4) String  fullText = "(b) WWII ended 1945";
-           (5) char answer      = 'b';  This is just one character so it couldn't be '10'
-           (6) boolean fact     = true/false;  is storing result of the decision
+        boolean action = true;
+        boolean romance = true;
+        boolean horror = false;
+        boolean comedy = true;
 
-         */
-        // LEKCJA 18
+        if (action && romance) {
+            // includes action and romance
+            System.out.println("This movie includes action and romance. ");
+            if (comedy || horror) {
+                //everyone preferences have been met!
+                System.out.println("This movie includes comedy or horror!");
+            }
+        }
+        // LEKCJA 23 SWITCH STATEMENT  na przykłądzie COFFEE MACHINE
 
-        int x = 2 + 3;      // addition
-        int y = 4 + 5;      // substraction
-        int temp = -20;
-        int days = 7 * 4;   // mlultuplication
-        double div = 5 / 2;// division  wynikiem tego działanie będzie 2 dopoki jedna z liczb nie bedzie z przecinkiem
-        double div1 = 5 / 2.0; // tutaj wynik wyjdzie 2.5 bo jedna z liczb jest zmiennoprzecinkowa (czyli jest doublem)
+        int passcode = 629;
+        String coffeeType;
 
-        // LEKCJA 19 CASTING - RZUTOWANIE NP DOUBLA NA INTIGERA LUB NA ODWRÓT
+        if (passcode == 555) {
+            //espresso passcode
+            coffeeType = "Espresso";
+        } else if (passcode == 312) {
+            //vanilla passcode
+            coffeeType = "Vanilla Latte";
+        } else if (passcode == 629) {
+            //drip coffe code
+            coffeeType = "Drip coffee";
+        } else {
+            //unknows passcode
+            coffeeType = "Unknown";
+        }
 
-        double current = 17;
-        double rate = 1.5;
-        double future = current * rate;
-        System.out.println(future);
-        int approx = (int) future; // RZUTOWANIE DOUBLE NA INTIGERA
-        System.out.println(approx);
+        /* Caly ten code mozna zapisac zwiężlej za pomoca switch statement
 
-        double accurate = (double) x / y; //rzutowanie intigera na double
-        System.out.println(accurate);
+            Switch statement  A switch statement let’s you check the value of a certain variable
+            (like our coffee maker passcode)  and test it for equality against a list of possible values that it can take.
+            Each of these specific values is called a case and you can program different behavior for each case.
+            In Java this looks like this: */
 
-        // Tasks - JAVA BASIC COURSE - PART 1
-
-        //tak 3.
-        int bankBalance = 500;
-        bankBalance = bankBalance + 250;
-        bankBalance = bankBalance - 100;
-        System.out.println(bankBalance);
-
-        //Task 4.
-        System.out.println(2.0 * (5 / 2)); // wynik wychodzi 4 bo java pomija reszte przy dizeleniu dwoch intigerow
-
-        //Task 5.
-        int day;
-        day = 9;
-        String month;
-        month = " kwiecień ";
-
-        // Task 6
-        String firstName = "Tomasz";
-        String lastName = "Machaj";
-        String fullName = firstName + " " + lastName;
-        int quantiti = fullName.length();
-        System.out.println("Hello, my name is" + " " + fullName + ". There are" + " " + quantiti + " letters in my name");
-
-        //TASK 7
-
-        double fahrenheit = 55.0;
-        double celsius = (fahrenheit - 32) * 5 / 9;
-        System.out.println(celsius);
+        switch (passcode) {
+            case 555:
+                coffeeType = "Espresso";
+                break;
+            case 312:
+                coffeeType = "Vanilla latte";
+                break;
+            case 629:
+                coffeeType = "Drip coffe";
+                break;
+            default:
+                coffeeType = "Unknown";
+                break;
+        }
+        System.out.println(coffeeType);
     }
 }
